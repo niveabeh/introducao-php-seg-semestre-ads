@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">,
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>PHP, HTMl e CSS</title>
+</head>
+<body>
+    <form action="processa.php" method="POST" onsubmit="return validarformulario()">
+        <legend>Cadastro</legend>
+        
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" placeholder="Seu nome">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Seu email">
+            <label for="mensagem">Mensagem</label>
+            <textarea name="mensagem" id="mensagem" rows="4" placeholder="Digite algo"></textarea>
+            <button type="submit">Enviar</button>
+        
+    </form>
+    <script src="main.js" ></script>
+</body>
+</html>
