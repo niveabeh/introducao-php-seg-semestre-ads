@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Atividade 3</title>
+</head>
+<body>
+    <form action="processo.php" method="post" onsubmit="return validarForm()">
+        <legend>Boletim</legend>
+        <label for="notaUm">Primeira nota</label>
+        <input type="text" id="notaUm" name="notaUm" placeholder="Informe a primeira nota">
+        <label for="notaDois">Primeira nota</label>
+        <input type="text" id="notaDois" name="notaDois" placeholder="Informe a segunda nota">
+        <label for="notaTres">Primeira nota</label>
+        <input type="text" id="notaTres" name="notaTres" placeholder="Informe a terceira nota">
+        <label for="notaQuatro">Primeira nota</label>
+        <input type="text" id="notaQuatro" name="notaQuatro" placeholder="Informe a quarta nota">
+        <button class="btn">Enviar</button>
+        <p id="resp"></p>
+    </form>
+    <script src="main.js"></script>
+</body>
+</html>
