@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #303030;
+}
+body{
+    background-color: #dedede;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form, .caixa{
+    width: 30%;
+    padding: 20px;
+    border-radius: 32px;
+    background-color: #fff;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+.caixa{
+    width: 40%;
+    padding: 20px;
+    border-radius: 32px;
+    background-color: #fff;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+legend{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600
+}
+input::placeholder{
+    font-size: 1rem;
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+}
+input{
+    border: none;
+    background-color: aliceblue;
+    border-radius: 32px;
+    padding: 20px 16px;
+    width: 100%;
+}
+.caixa-input{
+    display: flex;
+    width: 100%;
+    gap: 12px;
+}
+.caixa p{
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: red;
+    text-transform: capitalize;
+}
+button, .voltar{
+    background-color: #00800b;
+    color: #fff;
+    border-radius: 0 12px 0 12px;
+    padding: 20px 16px;
+    border: none;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+}

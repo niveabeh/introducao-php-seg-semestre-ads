@@ -19,12 +19,9 @@
             }else{
                 echo "<div class='caixa'> <p>O número " . htmlspecialchars($numero)." é ímpar</p>".  $voltar. "</div>";
             }
-           
         }
     }
-
 ?>
-    
 </body>
 </html>
 
