@@ -14,7 +14,7 @@ body{
     align-items: center;
     justify-content: center;
 }
-form{
+form, .caixa{
     background-color: #17012b6b;
     backdrop-filter: blur(30px);
     border-radius: 32px;
@@ -27,6 +27,8 @@ form{
 form p {
     margin-top: 20px;
     padding: 0 12px;
+    color: red;
+    letter-spacing: 0.8px;
 }
 legend{
     font-size: 2rem;
@@ -49,6 +51,13 @@ input{
 input::placeholder{
     color: #ffffff6b;
 }
+.caixa{
+    display: flex;
+    flex-direction: column;
+}
+.caixa p{
+    text-align: center;
+}
 .btn{
     border: none;
     text-decoration: none;
@@ -57,5 +66,8 @@ input::placeholder{
     font-size: 1rem;
     text-transform: uppercase;
     padding: 16px 20px;
-    margin-top: 12px;
+    margin-top: 20px;
+    cursor: pointer;
+    text-align: center;
+   
 }
