@@ -15,29 +15,30 @@
 
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-        $notaUm = $_POST["notaUm"] ?? "" || $_POST[(float)"notaUm"];
-        $notaDois = $_POST["notaDois"] ?? ""|| $_POST[(float)"notaDois"];
-        $notaTres = $_POST["notaTres"] ?? "" || $_POST[(float)"notaTres"];
-        $notaQuatro = $_POST["notaQuatro"] ?? ""|| $_POST[(float)"notaQuatro"];
-        
-        if(empty($notaUm)){
-            echo "<div class='caixa'><p>Por favor, informe um número no campo Primeira nota</p>".$voltar." </div>";
-        }else if(!is_numeric($notaUm)){
-            echo "<div class='caixa'><p>Por favor, informe um número valido</p>".$voltar." </div>";
-        }else if(empty($notaDois)){
-            echo "<div class='caixa'><p>Por favor, informe um número no campo Primeira nota</p>".$voltar." </div>";
-        }else if(!is_numeric($notaDois)){
-            echo "<div class='caixa'><p>Por favor, informe um número valido</p>".$voltar." </div>";
-        }else if(empty($notaTres)){
-            echo "<div class='caixa'><p>Por favor, informe um número no campo Primeira nota</p>".$voltar." </div>";
-        }else if(!is_numeric($notaTres)){
-            echo "<div class='caixa'><p>Por favor, informe um número valido</p>".$voltar." </div>";
-        }else if(empty($notaQuatro)){
-            echo "<div class='caixa'><p>Por favor, informe um número no campo Primeira nota</p>".$voltar." </div>";
-        }else if(!is_numeric($notaQuatro)){
-            echo "<div class='caixa'><p>Por favor, informe um número valido</p>".$voltar." </div>";
+        $notaUm = $_POST["notaUm"] ?? "";
+        $notaDois = $_POST["notaDois"] ?? "";
+        $notaTres = $_POST["notaTres"] ?? "" ;
+        $notaQuatro = $_POST["notaQuatro"] ?? "";
+
+        if($notaUm =="" || !is_numeric($notaUm)){
+            echo "<div class='caixa'>Erro, informe um número válido no campo</div>";
+        }else if($notaDois =="" || !is_numeric($notaDois)){
+            echo "<div class='caixa'>Erro, informe um número válido no campo</div>";
+        }else if($notaTres =="" || !is_numeric($notaTres)){
+            echo "<div class='caixa'>Erro, informe um número válido no campo</div>";
+        }else if($notaQuatro =="" || !is_numeric($notaQuatro)){
+            echo "<div class='caixa'>Erro, informe um número válido no campo</div>";
+        }else{
+            $vetor = [(float)$notaUm, (float)$notaDois, (float)$notaTres, (float)$notaQuatro];
+            $acumulador = 0.0;
+            for($i = 0 ; $i < 4; $i++){
+                $acumulador += $vetor[$i];
+            }
+            echo "<div class='caixa'>A média: ". $acumulador/4 ."</div>";
         }
+        
     }
+        
     ?>
 </body>
 </html>
