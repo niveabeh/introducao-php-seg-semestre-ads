@@ -11,9 +11,14 @@
      $voltar =  "<a class='btn'>Voltar</a>";
      if($_SERVER['REQUEST_METHOD'] === 'POST'){
        $email = $_POST["email"] ?? "";
-       $regexEmail = "/^(\w){3,}@(\w){3,}.?((\w){2,})?$/";
-
-     }
+       
+       if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+         echo "<div class='caixa'>Email inválido</div>";
+       }
+       else{
+        echo "<div class='caixa'>continua o código</div>";
+       }
+      }
     
     
     ?>
