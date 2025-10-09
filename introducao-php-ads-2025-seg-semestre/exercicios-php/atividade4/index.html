@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contador Personalizado</title>
+</head>
+<body>
+    <section>
+        <div class="caixa-esquerda">
+            
+        </div>
+        <div class="caixa-direita">
+            <form action="processa.php" method="POST" onsubmit="return validarForm()">
+                <legend>Contador Personalizado</legend>
+                <label for="inicio">Início</label>
+                <input type="text" name="inicio" id="inicio" placeholder="número início">
+                <label for="fim">fim</label>
+                <input type="text" name="fim" id="fim" placeholder="número fim">
+                <button type="submit" class="btn">Enviar</button>
+                <p id="resp"></p>
+            </form>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

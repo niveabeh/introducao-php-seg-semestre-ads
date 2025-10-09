@@ -34,7 +34,13 @@
             for($i = 0 ; $i < 4; $i++){
                 $acumulador += $vetor[$i];
             }
-            echo "<div class='caixa'>A média: ". $acumulador/4 ."</div>";
+            $media = $acumulador/4;
+
+            if($media >= 7){
+                echo "<div class='caixa'>Aprovado. <br> A média: $media </div>";
+            }else{
+                echo "<div class='caixa'>Reprovado. <br> A média: $media </div>";
+            }
         }
         
     }
