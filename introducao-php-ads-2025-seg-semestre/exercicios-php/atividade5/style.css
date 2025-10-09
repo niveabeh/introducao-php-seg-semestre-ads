@@ -39,7 +39,7 @@ section{
 }
 legend{
     color: #231F38;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     text-transform: uppercase;
     font-weight: bold;
     text-align: center;
@@ -78,7 +78,8 @@ form, .caixa{
     font-size: 1.5rem;
 }
 #resp{
-    color: #181818;
+    color: #ff0000;
+    margin-top: 12px;
 }
 .btn{
     margin-top: 20px;
