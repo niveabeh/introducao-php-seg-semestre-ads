@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #F2EFF8;
+    height: 100vh;
+    width: 100%;
+}
+section{
+    width: 70%;
+    height: 80vh;
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 32px;
+}
+.caixa-esquerda, .caixa-direita{
+    display: flex;
+}
+.caixa-esquerda{
+    background-image: url("img/pexels-james-lee-932763-2549944.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 40%;
+    border-radius: 32px 0 0 32px;
+}
+.caixa-direita{
+    width: 60%;
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+legend{
+    color: #231F38;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+label{
+    color: #231F38;
+    font-size: 1rem;
+    width: 100%;
+}
+input{
+    padding: 12px 20px;
+    border: none;
+    border-radius: 32px;
+    width: 100%;
+    background-color: #F2EFF8;
+    margin-bottom: 12px;
+    margin-top: 8px;
+}
+form, .caixa{
+    width: 60%;
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 32px;
+    border: 1px solid #d6bfeb;
+    background-color: #fff;
+    backdrop-filter: blur(30px);
+    box-shadow: 0 4px 4px #16003e44;
+    display: flex;
+    flex-direction: column;
+}
+#texto{
+    width: 100%;
+    padding: 12px;
+    background-color: #F2EFF8;
+    color: #464444;
+    border-radius: 1rem;
+    border: 1px solid #d6bf;
+    resize: none;
+
+}
+.caixa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50% !important;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+#resp{
+    color: #ff0000;
+    margin-top: 12px;
+}
+.btn{
+    margin-top: 20px;
+    background-color: #16003E;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    letter-spacing: 0.8px;   
+    padding: 12px 20px;
+    transition: all 0.3s ease;
+    border-radius: 32px;
+}
+.btn:hover{
+    background-color: #1b093b;
+    transform: translateY(-10px);
+}
+.resposta{
+    color: #202020;
+    margin-top: 12px;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contador Personalizado</title>
+</head>
+<body>
+    <section>
+        <div class="caixa-esquerda">
+            
+        </div>
+        <div class="caixa-direita">
+            <form action="processa.php" method="POST" id="formulario"  onsubmit="return validarForm() ">
+                <legend>Contador de Palavras</legend>
+                <!-- <label for="texto">Digite um texto</label><br> -->
+                <textarea name="texto" id="texto"  placeholder="Querido diário..."></textarea>
+                <button type="submit" class="btn">Enviar</button>
+                <p  class="resposta">Quantidade de palavras: <span id="resp"></span></p>
+                <p id="mensagem"></p>
+            </form>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
