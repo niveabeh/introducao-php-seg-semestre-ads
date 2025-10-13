@@ -12,8 +12,8 @@
             
         </div>
         <div class="caixa-direita">
-            <form action="processa.php" method="POST" id="formulario"  onsubmit="return validarForm() ">
-                <legend>Contador de Palavras</legend>
+            <form action="processa.php" method="POST" id="formulario">
+                <legend>Validação de Senha</legend>
                 <label for="senha">Senha</label>
                 <input type="text" id="senha" name="senha" placeholder="minhaSenha123@">
                 <button type="submit" class="btn">Enviar</button>
@@ -22,6 +22,7 @@
                     <li id="oitoCaract">Pelo menos 8 caracteres.</li>
                     <li id="umaLetraM">Uma letra maiúscula.</li>
                     <li id="umNumero">Um número.</li>
+                    <li id="umEspecial">Um caractere especial.</li>
                 </ul>
                 <p id="mensagem"></p>
             </form>

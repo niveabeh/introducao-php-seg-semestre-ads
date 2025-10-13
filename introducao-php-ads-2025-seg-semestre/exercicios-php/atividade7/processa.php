@@ -10,21 +10,25 @@
     <?php 
      $voltar =  "<a class='btn'>Voltar</a>";
      if($_SERVER['REQUEST_METHOD'] === 'POST'){
-        $texto = $_POST["texto"] ?? "";
+        $senha = $_POST["senha"] ?? "";
 
-        if($texto == ""){
-          echo "<div class='caixa'>Campo textarea vazio</div>";
-        }else{
-          $qtdPalavras = str_word_count($texto);
-          if($qtdPalavras < 20){
-            echo "<div class='caixa'>Texto curto.<br> Quantidade de palavras: ". $qtdPalavras."</div>";
+        if($senha === ""){
+            echo "<div class='caixa'>Erro, compo 'senha' vazio ou inválido". $voltar ."</div>";
+            echo $voltar;
             
-          }else if($qtdPalavras > 20 && $qtdPalavras < 50){
-            echo "<div class='caixa'>Texto médio.<br> Quantidade de palavras: ". $qtdPalavras."</div>";
-          }else{
-            echo "<div class='caixa'>Texto longo <br>Quantidade de palavras: ". $qtdPalavras."</div>";
-          }
+        }else if(strlen($senha) < 8){
+            echo "<div class='caixa'>Erro, senha fraca". $voltar ."</div>";
+            
+        }else if(!preg_match('/[A-Z]/', $senha)){
+            echo "<div class='caixa'>Erro, senha não contém letra maiúscula". $voltar ."</div>";
+            
+        }else if(!preg_match('/\d/', $senha)){
+            echo "<div class='caixa'>Erro, senha não contém número". $voltar ."</div>";
+            
+        }else{
+            echo "<div class='caixa'>Entrou, senha salva". $voltar ."</div>";
         }
+
      }
     ?>
 </body>
