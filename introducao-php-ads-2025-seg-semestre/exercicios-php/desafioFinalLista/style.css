@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+header {
+    background-color: #0d6efd;
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 20%;
+    border-right: 3px solid #ffffff;
+}
+
+.logo h1 {
+    font-size: 24px;
+}
+
+.logo i {
+    font-size: 32px;
+}
+
+.info {
+    font-size: 20px;
+    width: 80%;
+    padding: 0px 20px;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+}
+
+.menu {
+    width: 20%;
+    padding: 20px;
+    background-color: #e2e2fc;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.menu a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu ul li {
+    background-color: #feffff;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu ul li:hover {
+    background-color: #0b5ed7;
+    color: white;
+}
+
+.container-direito {
+    width: 80%;
+    padding: 20px;
+    border-radius: 32px;
+    background-color: #f3f6f7;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.cadastrar {
+    background-color: #b7f3d7;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+form input {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+form label {
+    font-weight: bold;
+    font-size: 18px;
+    color: rgb(52, 52, 53);
+}
+
+.coluna {
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+}
+
+.colunabtnCol {
+    align-items: flex-end;
+    justify-content: center;
+    width: 30%;
+    display: flex;
+    flex: 1;
+}
+
+.colunabtnCol button {
+    padding: 12px 20px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background-color: #27be08;
+    width: 50%;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.colunabtnCol button:hover {
+    background-color: #087504;
+}
+
+.listar {
+    background-color: #fff;
+    color: black;
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    overflow-y: auto;
+    height: 70vh;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #0d6efd;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 80%;
+}
+dialog p {
+    font-weight: 500;
+    font-size: 18px;
+    color: #ff0000;
+    text-align: center;
+}
+dialog button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #0d6efd;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+dialog button:hover {
+    background-color: #0b5ed7;
+}
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.excluir-btn {
+    padding: 8px 16px;
+    border-radius:20px;
+    border: none;
+    outline: none;
+    background-color: #ff4d4d;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.excluir-btn:hover {
+    background-color: #d61515;
+}
+.divErro{
+    width: 100%;
+    margin: 8px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: #f8b5b5;
+    color: #ff0000;
+    font-weight: bold;
+}
