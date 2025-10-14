@@ -1,16 +1,18 @@
-const frm = document.getElementById("formulario");
-const inicio = document.getElementById("inicio");
-const fim = document.getElementById("fim");
-const resp = document.getElementById("resp");
+const form = document.getElementById("formulario");
+const campoInicio = document.getElementById("inicio");
+const campoFim = document.getElementById("fim");
+const campoResp = document.getElementById("resp");
 
-frm.addEventListener("submit", (e) =>{ 
-    e.preventDefault(); 
-    let valorInicio = inicio.value.trim();
-    let valorFim = fim.value.trim();
-    resp.
-    
-    for(let i = valorInicio; i <= valorFim; i++){
-        
+form.addEventListener("submit", (e) =>{
+
+    let numInicio = parseInt(campoInicio.value.trim());
+    let numFim = parseInt(campoFim.valeu.trim());
+
+    let elementDiv = campoResp.createElement("p");
+    campoResp.classList("caixa");
+    elementDiv.appendChild()
+    if(numInicio === ""){
+
     }
-     
+
 })
