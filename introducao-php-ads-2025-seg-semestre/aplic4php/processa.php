@@ -37,7 +37,7 @@
                         echo "<div class='caixa'>";
                         do{
                             echo  "<p>$contador,</p>";
-                            $contador += 1;
+                            $contador = $contador * $numFim;
                         }while($contador <= $numFim);
                         echo "</div>";
                     }
