@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <form action="processa.php" method="POST" id="formulario" >
+            <legend>Gerador de Múltiplos</legend>
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" placeholder="Seu nome">
+            <label for="idade">Idade</label>
+            <input type="text" name="idade" id="idade" placeholder="Sua idade">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="seuEmail123@gmail.com">
+            <button type="submit">enviar</button>
+        </form>
+        <div id="resp">
+        </div>
+    </section>
+    <script src="main.js"></script>
+</body>
+</html>
