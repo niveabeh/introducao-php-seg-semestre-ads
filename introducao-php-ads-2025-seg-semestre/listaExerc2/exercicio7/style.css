@@ -72,6 +72,9 @@ button, .btn{
     box-shadow:  0 2px 5px #142c007a ;
     margin-top: 20px;
     text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    color:#292828;
 }
 .resp, .caixa{
    

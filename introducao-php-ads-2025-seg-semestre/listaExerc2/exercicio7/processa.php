@@ -13,9 +13,6 @@
         <form action="processa.php" method="POST" id="formulario">
             <legend>Criar uma validação de senha</legend>
 
-            <label for="senha">Senha</label>
-            <input type="text" name="senha" id="senha" placeholder="Gatinho123@">
-            <button type="submit">enviar</button>
             <ul>
                 <li id="oitoCaract">Pelo menos 8 caracteres.</li>
                 <li id="umaLetraM">Uma letra maiúscula.</li>
@@ -24,7 +21,7 @@
             </ul>
 
             <?php
-            $voltar =  "<a class='btn'>Voltar</a>";
+            $voltar =  "<a class='btn' href='index.html'>Voltar</a>";
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $senha = $_POST["senha"] ?? "";
 
