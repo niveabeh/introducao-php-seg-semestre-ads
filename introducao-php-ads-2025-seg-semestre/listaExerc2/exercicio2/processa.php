@@ -22,20 +22,24 @@
             }
 
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                $nome = validar($_POST['nome']) ?? '';
-                $email = validar($_POST['email']) ?? '';
-                $idade = validar($_POST['idade']) ?? '';
+                $numero = validar($_POST['numero']) ?? '';
+                
 
-                if (empty($nome) || empty($email) || empty($idade)) {
+                if (empty($numero)) {
                     echo 'Preencha todos os campos';
-                } else if (!preg_match("/^[a-zA-Z]+(\s[a-zA-Z]+)*/", $nome)) {
-                    echo 'Nome inválido';
-                } else if ($idade < 0 || !is_numeric($idade)) {
-                    echo 'Erro, idade inválida';
-                } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                    echo 'E-mail inválido';
+                }else if ($numero < 0 || !is_numeric($numero)) {
+                    echo 'Erro, numero inválida';
                 }else{
-                    echo "<div class='caixa'>Nome: $nome <br> Idade: $idade <br> E-mail: $email </div>";
+                    echo "<div class='caixa'>Números: ";
+
+                    for ($i = 1; $i <= $numero; $i++) {
+                        if ($i %2 == 0) {
+                            echo "<p> $i,</p>";
+                        } 
+                       
+                    }
+                    echo "</div>";
+                     
                 }
             }
             ?>

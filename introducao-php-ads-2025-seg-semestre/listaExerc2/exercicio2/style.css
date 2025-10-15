@@ -25,6 +25,13 @@ form{
     box-shadow: 0 0 10px #0e4d014f;
     
 }
+form p{
+    margin-top: 12px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: rgb(70, 69, 69);
+    font-size: 14px;
+}
 legend{
     font-size: 2rem;
     font-weight: bold;
@@ -76,4 +83,6 @@ button, btn{
         display: flex;
         
 }
+
+
 
