@@ -26,21 +26,27 @@
                     $numInicio = validar($_POST['inicio']) ?? "";
                     $numFim = validar($_POST['fim']) ?? "";
 
-                    
-                    if(empty($numInicio) || empty($numFim)){
-                        echo "<div class='caixa'>Vazio</div>";
-                    }else if(!is_numeric($numInicio) || !is_numeric($numFim)){
-                        echo "<div class='caixa'>Informe um número válido</div>";
-                    }else{
-
-                        $contador = $numInicio; 
-                        echo "<div class='caixa'>";
-                        do{
-                            echo  "<p>$contador,</p>";
-                            $contador = $contador * $numFim;
-                        }while($contador <= $numFim);
-                        echo "</div>";
+                    if(!ctype_digit($numInicio) || !ctype_digit($numFim)){
+                        echo "<div class='caixa'>Erro, informe um número válido!</div>";
+                        voltar();
+                        exit;
                     }
+
+                    $numInicio = (int) $numInicio;
+                    $numFim = (int) $numFim;
+
+                    if($numInicio >= $numFim){
+                        echo "<div class='caixa'>Erro, número início deve ser maior que o limite!</div>";
+                        voltar();
+                        exit;
+                    }
+                    $contador = $numInicio;
+                    echo "<div class='caixa'>";
+                    while($contador <= $numFim){
+                        echo "<p>$contador</p>";
+                        $contador += $numInicio;
+                    }
+                    echo "</div>";
                 }
            ?>
         </div>
