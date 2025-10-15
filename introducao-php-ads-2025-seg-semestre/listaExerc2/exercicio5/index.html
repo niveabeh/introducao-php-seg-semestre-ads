@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Gerador de Múltiplos</title>
+</head>
+<body>
+    <section>
+        <form action="processa.php" method="POST" id="formulario" >
+            <legend>Validação de telefone</legend>
+            <p>Validar um número de telefone no formato (XX) XXXX-XXXX ou (XX) XXXXXXXXX</p>
+            <label for="telefone">Número de telefone</label>
+            <input type="text" name="telefone" id="telefone" placeholder="(00) 0 0000-0000">
+            <button type="submit">enviar</button>
+
+        </form>
+        <div id="resp">
+        </div>
+    </section>
+    <script src="main.js"></script>
+</body>
+</html>
