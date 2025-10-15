@@ -35,15 +35,6 @@ session_start();
 
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $numero = validar($_POST['numero']) ?? '';
-
-
-                if (isset($_SESSION['acumulador']) && $_SESSION['acumulador'] >= 10) {
-                    echo "<div class='caixa'>Acabou. Não é possível inserir mais números.</div>";
-                    voltar();
-                    exit;
-                }
-
-
                 if (empty($numero)) {
                     echo 'Preencha todos os campos';
                     exit;
@@ -51,23 +42,30 @@ session_start();
                     echo 'Erro, numero inválido';
                     exit;
                 } else {
-                    echo "<div class='caixa'>Números: ";
+                    if (!isset($_SESSION['numero'])) {
+                        $_SESSION['numero']= [];
+                    }
+                    echo "<div class='caixa'>";
 
                     $numero = (int) $numero;
+                    $_SESSION['numero'][] = $numero;
 
-                    $_SESSION['acumulador'] += $numero;
-                    $acumulador = $_SESSION['acumulador'];
-
-                    echo "<p>$acumulador<br></p>";
-
-                    if ($acumulador >= 10) {
-                        echo "Acabou";
-                        voltar();
-                        exit;
+                    do{
+                        if($numero <= 10){
+                            echo "<p>$numero<br></p>";
+                            voltar();
+                        }
+                        break;
                     }
-
+                    while( $numero <= 10);
+                    if($numero > 10){
+                        echo "<div class='caixa'>".implode(",",$_SESSION['numero'])."</div>";
+                        voltar();
+                        session_destroy();
+                    }
                     echo "</div>";
-                    voltar();
+                    
+                    
                 }
             }
 
