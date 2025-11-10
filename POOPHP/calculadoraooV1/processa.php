@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $erro = 'Operação desconhecida';
         }
     }
-    Calculadora::exibirResultado($erro, $operacoa, $val1, $val2, $resultado);
+    
 }
 
 ?>
@@ -123,15 +123,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 
     <main class="container">
-        <h1>Resultado</h1>
         <?php
-
-        if ($erro !== null) {
-            echo "<p class='error> " . htmlspecialchars($erro) . "</p>";
-        } else {
-
-           
-        }
+            Calculadora::exibirResultado($erro, $operacao, $val1, $val2, $resultado);
         ?>
        
     </main>
