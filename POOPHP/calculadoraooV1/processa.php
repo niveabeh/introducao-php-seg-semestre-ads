@@ -83,7 +83,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         switch ($operacao) {
             case 'somar':
+                //assim como em um a função há passagem de parametros e retorno (ou não) de valores,
+                // na programação há essas ferramentas
+                // Ali ele diz "na classe calculadora, use a função 'somar', onde irá retornar um valor e esse
+                // valor será armazenado nesta variável
                 $resultado = Calculadora::somar($valor1, $valor2);
+                
 
                 break;
             case 'subtrair':
@@ -124,6 +129,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <main class="container">
         <?php
+        
+            //chamando o método estático exibirResultado da classe Calculadora
             Calculadora::exibirResultado($erro, $operacao, $val1, $val2, $resultado);
         ?>
        
