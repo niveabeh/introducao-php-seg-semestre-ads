@@ -25,7 +25,6 @@
                         break;
                 }
                 echo "</strong>" . htmlspecialchars($v2) . " = <strong>" . htmlspecialchars($resultado) . "</strong></p>";
-
             }
             echo "<a href='index.html'>Voltar</a>";
         }
