@@ -55,7 +55,7 @@ final class Calculadora
 
         $s = str_replace(',', '.', $s);
 
-        if(!preg_match('/^\s*[+-]?\d+(?:[\.,]\d+)?\s*$/',$s)){
+        if(!preg_match('/^\s*[+-]?\d+(?:[\.,]\d+)?\s*$/',$s)){           
             return null;
         }
         return floatval($s);
@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $resultado = null;
     $erro = null;
 
-    if ($valor1 === null || $valor2 === null) {
+    if ($val1 === null || $val2 === null) {
 
         $erro = 'Entrada inválida. Certifique-se de informar números válidos';
     } else {
@@ -87,23 +87,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // na programação há essas ferramentas
                 // Ali ele diz "na classe calculadora, use a função 'somar', onde irá retornar um valor e esse
                 // valor será armazenado nesta variável
-                $resultado = Calculadora::somar($valor1, $valor2);
+                $resultado = Calculadora::somar($val1, $val2);
                 
 
                 break;
             case 'subtrair':
-                $resultado = Calculadora::subtrair($valor1, $valor2);
+                $resultado = Calculadora::subtrair($val1, $val2);
 
                 break;
             case 'multiplicar':
-                $resultado = Calculadora::multiplicar($valor1, $valor2);
+                $resultado = Calculadora::multiplicar($val1, $val2);
 
                 break;
             case 'dividir':
-                if ($valor2 == 0) {
+                if ($val2 == 0) {
                     $erro = 'Divisão por zero não permitida';
                 } else {
-                    $resultado = Calculadora::dividir($valor1, $valor2);
+                    $resultado = Calculadora::dividir($val1, $val2);
                 }
                 break;
             default:
@@ -129,7 +129,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <main class="container">
         <?php
-        
+
             //chamando o método estático exibirResultado da classe Calculadora
             Calculadora::exibirResultado($erro, $operacao, $val1, $val2, $resultado);
         ?>
