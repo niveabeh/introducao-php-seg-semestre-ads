@@ -19,7 +19,7 @@
         {
             return $a * $b;
         }
-        public function dividir(float $a, float $b): float
+        public function dividir(float $a, float $b): mixed
         {
             if ($b === 0.0) {
                 return "Erro: divisão por zero";
