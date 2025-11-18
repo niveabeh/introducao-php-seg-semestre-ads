@@ -1,7 +1,11 @@
 <?php
 
-require_once 'Calculadora.php';
 require_once 'TrataeMostra.php';
+require_once 'Subtracao.php';
+require_once 'Divisao.php';
+require_once 'Soma.php';
+require_once 'Multiplicacao.php';
+
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -16,8 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $resultado = null;
     $erro = null;
 
-    $calcoper = new Calculadora();
-
     if ($val1 === null || $val2 === null) {
 
         $erro = 'Entrada inválida. Certifique-se de informar números válidos';
@@ -29,24 +31,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // na programação há essas ferramentas
                 // Ali ele diz "na classe calculadora, use a função 'somar', onde irá retornar um valor e esse
                 // valor será armazenado nesta variável
-                $resultado = $calcoper->somar($val1, $val2);
-                
-
+                $soma = new Soma();
+                $soma->setNum1($val1);
+                $soma->setNum2($val2); 
+                $resultado = $soma->calculaSoma(); 
                 break;
             case 'subtrair':
-                $resultado = $calcoper->subtrair($val1, $val2);
+                $subtrair = new Subtracao();
+                $subtrair->setNum1($val1);
+                $subtrair->setNum2($val2); 
+                $resultado = $subtrair->calculaSubtrair(); 
 
                 break;
             case 'multiplicar':
-                $resultado = $calcoper->multiplicar($val1, $val2);
+                $multiplica = new Multiplicacao();
+                $multiplica->setNum1($val1);
+                $multiplica->setNum2($val2); 
+                $resultado = $multiplica->calculaMultiplicacao(); 
 
                 break;
             case 'dividir':
-                if ($val2 == 0) {
-                    $erro = 'Divisão por zero não permitida';
-                } else {
-                    $resultado = $calcoper->dividir($val1, $val2);
-                }
+                $divide = new Divisao();
+                $divide->setNum1($val1);
+                $divide->setNum2($val2); 
+                $resultado = $divide->calculaDivisao(); 
                 break;
             default:
                 $erro = 'Operação desconhecida';

@@ -1,5 +1,5 @@
 <?php
-    final class Divisao{
+    final class Divisao implements IOperacao{
 
 
         //atributos da classe
@@ -8,11 +8,11 @@
 
 
         //metodo para retornar o valor do atributo num1
-        public function getNum(): float{
+        public function getNum1(): float{
             return $this->num1;
         }
         //metodo para receber o valor de num1
-        public function serNum(): void{
+        public function setNum1(): void{
             $this->num1 = $num1;
         }
         //metodo para retornar o valor do atributo num2
@@ -24,11 +24,11 @@
             $this->num2 = $num2;
         }
 
-        public function calculaDivisao(): mixed{
-            if($this->num2=== 0.0) {
-                return "Erro: divisão por zero";
+        public function calcula(): mixed{
+            if($this->num2 ===0){
+                echo "erro, não pode ser dividido por 0";
             }
-            return $this->num1 / $this->num2;
+            return $this->num1 / $this->num2;    
         }
     }
 ?>
