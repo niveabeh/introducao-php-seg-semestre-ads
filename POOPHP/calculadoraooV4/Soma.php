@@ -1,18 +1,15 @@
 <?php
     final class Soma{
-
-
         //atributos da classe
         private float $num1;
         private float $num2;
-
 
         //metodo para retornar o valor do atributo num1
         public function getNum1(): float{
             return $this->num1;
         }
         //metodo para receber o valor de num1
-        public function setNum1(float $num1): void{
+        public function setNum1(float $num1): void{  
             $this->num1 = $num1;
         }
         //metodo para retornar o valor do atributo num2

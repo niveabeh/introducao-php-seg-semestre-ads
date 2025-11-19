@@ -1,7 +1,5 @@
 <?php
     final class Subtracao{
-
-
         //atributos da classe
         private float $num1;
         private float $num2;

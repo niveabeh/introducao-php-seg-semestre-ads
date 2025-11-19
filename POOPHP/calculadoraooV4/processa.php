@@ -79,7 +79,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <main class="container">
         <?php
-
             //chamando o método estático exibirResultado da classe Calculadora
             TrataeMostra::exibirResultado($erro, $operacao, $val1, $val2, $resultado);
         ?>
