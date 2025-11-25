@@ -19,36 +19,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $resultado = null;
     $erro = null;
-    $oper = null;
+    $novoOb = null;
 
     if ($val1 === null || $val2 === null) {
 
         $erro = 'Entrada inválida. Certifique-se de informar números válidos';
+
     } else {
 
         switch ($operacao) {
             case 'somar':
-                $oper = new Soma();
+                $novoOb = new Soma();
                 break;
             case 'subtrair':
-                $oper = new Subtracao();
+                $novoOb = new Subtracao();
                 break;
             case 'multiplicar':
-                $oper = new Multiplicacao();
+                $novoOb = new Multiplicacao();
                 break;
             case 'dividir':
-                if ($val2 === 0) {
-                    $erro = 'Divisão por zero não permitida';
-                } else {
-                    $oper = new Divisao();
-                }
+                   $novoOb = new Divisao();
                 break;
-            default:
-                $erro = 'Operação desconhecida';
         }
-        $oper->setNum1($val1);
-        $oper->setNum2($val2);
-        $resultado = $oper->calcula(); 
+        $novoOb->setNum1($val1);
+        $novoOb->setNum2($val2);
+        $resultado = $novoOb->calcula(); 
+       
     }
 }
 ?>
