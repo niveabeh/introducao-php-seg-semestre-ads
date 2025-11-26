@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $erro = 'Entrada inválida. Certifique-se de informar números válidos';
 
     } else {
-
+        
         switch ($operacao) {
             case 'somar':
                 $novoOb = new Soma();
@@ -38,13 +38,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $novoOb = new Multiplicacao();
                 break;
             case 'dividir':
-                   $novoOb = new Divisao();
+                if($val2 === 0.0){
+                    $erro = "Erro na divisão por zero";
+                }else{
+                    $novoOb = new Divisao();
+                }
                 break;
         }
-        $novoOb->setNum1($val1);
-        $novoOb->setNum2($val2);
-        $resultado = $novoOb->calcula(); 
-       
+        if(empty($erro)){
+            $novoOb->setNum1($val1);
+            $novoOb->setNum2($val2);
+            $resultado = $novoOb->calcula(); 
+        }
+        
     }
 }
 ?>
