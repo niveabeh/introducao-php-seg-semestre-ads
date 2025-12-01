@@ -1,4 +1,4 @@
-POOPHP/calculadoraooV6/IOperacao.php<?php
+<?php
     final class TrataeMostra{
         public static function exibirResultado(?string $erro, string $operacao, ?float $val1, ?float $val2, ?float $resultado): void{
             echo "<h1>Resultado</h1>";
