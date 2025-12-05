@@ -21,19 +21,19 @@ class Casa{
         return $this->cor;
     }
     public function setCor( string $cor): void{
-        $this->$cor = $cor;
+        $this->cor = $cor;
     }
     public function getListaDePortas():array{
         return $this->listaDePortas;
     }
     public function setListaDePortas( array $listaDePortas): void{
-        $this->$listaDePortas = $listaDePortas;
+        $this->listaDePortas = $listaDePortas;
     }
     public function getListaDeJanelas():array{
         return $this->listaDeJanelas;
     }
     public function setListaDeJanelas(array $listaDeJanelas): void{
-        $this->$listaDeJanelas = $listaDeJanelas;
+        $this->listaDeJanelas = $listaDeJanelas;
     }
 
 
@@ -50,7 +50,7 @@ class Casa{
     }
 
     public function retornaAbertura(string $tipo, int $indice): ?Aberturas{
-        $lista = $this-> getAberturasPorTipo($tipo);
+        $lista = $this->getAberturasPorTipo($tipo);
         return $lista[$indice] ?? null;
     }
 
@@ -75,7 +75,7 @@ class Casa{
         $info .= "<h>Janelas:</h3>";
         if(!empty($this->listaDeJanelas)){
             foreach($this->listaDeJanelas as $janela){
-                $estado = $janela -> getEstadoTexto();
+                $estado = $janela->getEstadoTexto();
                 $info .= "<p>{$janela->getDescricao()} - {$estado}</p>";
             }
         } else{
