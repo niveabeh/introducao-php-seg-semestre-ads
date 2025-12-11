@@ -15,38 +15,24 @@ $acao = $_POST['acao'] ?? '';
 
 switch ($acao) {
 
-    case 'construir':
-
-        echo "<h2>Você escolheu construir a casa!</h2>";
-        echo "<p>Preencha os dados abaixo para definir as características da sua casa:</p>";
-
-        echo '
-        <form action="processa.php" method="POST">
-            <input type="hidden" name="acao" value="salvar_casa">
-
-            <label><strong>Descrição da casa:</strong></label>
-            <input type="text" name="descricao" required><br><br>
-
-            <label><strong>Cor da casa:</strong></label>
-            <input type="text" name="cor" required><br><br>
-
-            <label><strong>Quantidade de Portas:</strong></label>
-            <input type="number" name="qtde_portas" min="0" required><br><br>
-
-            <label><strong>Quantidade de Janelas:</strong></label>
-            <input type="number" name="qtde_janelas" min="0" required><br><br>
-
-            <label><strong>Quantidade quartos:</strong></label>
-            <input type="number" name="qtdQuartos" min="0" required><br><br>
-
-             <label><strong>Quantidade de banheiros:</strong></label>
-            <input type="number" name="qtdBanheiros" min="0" required><br><br>
-
-            <label><strong>Tamanho da casa:</strong></label>
-            <input type="number" name="tamanho" min="0" required><br><br>
-
-            <button type="submit">Avançar</button>
-        </form>';
+    case 'fabricar':
+        echo "<h2>Fabricar Carros</h2>";
+        echo "<p>Preencha os dados do carro que deseja fabricar:</p>";
+        echo "
+        <form action='processa.php' method='POST'>
+            <input type='hidden' name='acao' value='salvar_carro'>
+            <label>Modelo:</label>
+            <input type='text' name='modelo' required><br><br>
+            <label>Cor:</label>
+            <input type='text' name='cor' required><br><br>
+            <label>Ano:</label>
+            <input type='number' name='ano' min='1886' max='2024' required><br><br>
+            <label>Quantidade:</label>
+            <input type='number' name='quantidade' min='1' value='1' required><br><br>
+            <button type='submit'>Fabricar</button>
+        </form>
+        <br><a href='../index.html'>Voltar ao menu</a>
+        ";
         break;
 
     case 'salvar_casa':

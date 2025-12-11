@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/style.css">
     <title>Document</title>
 </head>
-<body>
-    
-    <main>
-        <div class="container-esquerdo">
 
-        </div>
-        <div class="container-direito">
-            <h1>Fábrica de Carros</h1>
-            <form action="Controller/processa.php" method="POST" ></form>
-        </div>
-    </main>
+<body>
+    <div class="container-esquerdo">
+
+    </div>
+    <div class="container-direito">
+        <h1>Fábrica de Carros</h1>
+          <form action="Controller/processa.php" method="POST" id="menuForm">
+            <button type="submit" name="acao" value="fabricar">Fabricar Carros</button>
+            <button type="submit" name="acao" value="vender">Vender Carro</button>
+            <button type="submit" name="acao" value="listar">Ver Informações dos Carros</button>
+            <button type="submit" name="acao" value="limpar_sessao">Finalizar Sessão</button>
+        </form>
+    </div>
+    <script src="../assets/main.js"></script>
 </body>
+
 </html>
