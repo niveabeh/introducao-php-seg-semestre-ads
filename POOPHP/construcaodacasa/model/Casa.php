@@ -66,11 +66,11 @@ class Casa
         $this->qtdBanheiros = $qtdBanheiros;
     }
 
-    public function getTamanhoM2(): float
+    public function getTamanho(): float
     {
         return $this->tamanho;
     }
-    public function setTamanhoM2(float $tamanho): void
+    public function setTamanho(float $tamanho): void
     {
         $this->tamanho = $tamanho;
     }
@@ -100,13 +100,12 @@ class Casa
     public function geraInfoCasa(): string
     {
         $info = "<h2>Informações da casa</h2><br>
-    <p><strong>Descrição:</strong> {$this->descricao}</p>
-    <p><strong>Cor:</strong> {$this->cor}</p>";
-
-        $info .= "<h3>Informações do imóvel:</h3>";
-        $info .= "<p><strong>Quartos:</strong> {$this->qtdQuartos}</p>";
-        $info .= "<p><strong>Banheiros:</strong> {$this->qtdBanheiros}</p>";
-        $info .= "<p><strong>Tamanho:</strong> {$this->tamanho} m²</p>";
+        <p><strong>Descrição:</strong> {$this->descricao}</p>
+        <p><strong>Cor:</strong> {$this->cor}</p> 
+        <p><strong>Quartos:</strong> {$this->qtdQuartos}</p>
+        <p><strong>Banheiros:</strong> {$this->qtdBanheiros}</p>
+        <p><strong>Tamanho:</strong> {$this->tamanho} m²</p>
+        ";
 
         $info .= "<h3>Portas:</h3>";
         if (!empty($this->listaDePortas)) {
@@ -127,14 +126,17 @@ class Casa
         } else {
             $info .= "<p>Nenhuma janela cadastrada.</p>";
         }
-        $info .= "<p><strong>Aberturas abertas no momento:</strong> "
-            . $this->contarAberturasAbertas()
+       
+        $info .= "<p><strong>Portas abertas no momento:</strong> "
+            . $this->contarPortasAbertas()
             . "</p>";
+        $info .= "<p><strong>Janelas abertas no momento:</strong> "
+            . $this->contarJanelasAbertas()
+        . "</p>";
 
         return $info;
     }
-    public function contarAberturasAbertas(): int
-    {
+    public function contarPortasAbertas(): int {
         $contador = 0;
 
         foreach ($this->listaDePortas as $porta) {
@@ -143,14 +145,20 @@ class Casa
             }
         }
 
+        return $contador;
+    }
+
+    public function contarJanelasAbertas(): int {
+        $contador = 0;
+
         foreach ($this->listaDeJanelas as $janela) {
             if ($janela->getEstado() === 1) {
                 $contador++;
             }
-        }
-
-        return $contador;
-    
     }
+
+    return $contador;
+    }
+
 
 }
