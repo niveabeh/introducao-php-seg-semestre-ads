@@ -12,7 +12,7 @@ class Casa{
     private array $listaDeJanelas = [];
 
     public function getDescricao(): string{
-        return $this->descricao;
+        return $this->descricao; 
     }
     public function setDescricao (string $descricao): void{
         $this->descricao = $descricao;
@@ -36,9 +36,6 @@ class Casa{
         $this->listaDeJanelas = $listaDeJanelas;
     }
 
-
-
-
     public function getAberturasPorTipo(string $tipo): array{
         if($tipo === 'porta'){
             return $this->listaDePortas;
@@ -57,6 +54,7 @@ class Casa{
     public function moverAbertura(Aberturas $abertura, int $novoEstado): void{
         $abertura->setEstado($novoEstado);
     }
+
     public function geraInfoCasa(): string{
         $info = "<h2> Informações da casa</h2><br>
         <p><strong>Descrição:</strong> {$this->descricao}</p>
