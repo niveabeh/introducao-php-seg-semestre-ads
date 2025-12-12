@@ -94,7 +94,7 @@ class Casa
 
     public function moverAbertura(Aberturas $abertura, int $novoEstado): void
     {
-        $abertura->setEstado($novoEstado);
+        $abertura->setEstado($novoEstado);   
     }
 
     public function geraInfoCasa(): string

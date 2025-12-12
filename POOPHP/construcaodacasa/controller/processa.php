@@ -1,3 +1,5 @@
+
+
 <?php
 session_start();
 
@@ -15,7 +17,7 @@ $acao = $_POST['acao'] ?? '';
 
 switch ($acao) {
 
-      case 'construir':
+    case 'construir':
 
         echo "<h2>Você escolheu construir a casa!</h2>";
         echo "<p>Preencha os dados abaixo para definir as características da sua casa:</p>";
@@ -51,12 +53,8 @@ switch ($acao) {
         $qtdeBanheiros = (int)($_POST['qtd_banheiros'] ?? 0);
         $tamanho       = (float)($_POST['tamanho'] ?? 0);
 
-
-
         echo "<h2>Etapa 2: Definir portas e janelas</h2>";
-
-        echo "
-        <form action='processa.php' method='POST'>
+        echo "<form action='processa.php' method='POST'>
             <input type='hidden' name='acao' value='finalizar_casa'>
             <input type='hidden' name='descricao' value='{$descricao}'>
             <input type='hidden' name='cor' value='{$cor}'>
@@ -64,8 +62,7 @@ switch ($acao) {
             <input type='hidden' name='qtde_janelas' value='{$qtdeJanelas}'>
             <input type='hidden' name='qtde_quartos' value='{$qtdeQuartos}'>
             <input type='hidden' name='qtde_banheiros' value='{$qtdeBanheiros}'>
-            <input type='hidden' name='tamanho' value='{$tamanho}'>
-        ";
+            <input type='hidden' name='tamanho' value='{$tamanho}'>";
 
         if ($qtdePortas > 0) {
             echo "<h3>Portas</h3>";
@@ -312,3 +309,4 @@ switch ($acao) {
         echo "<br><a href='../index.html'>Voltar ao menu inicial</a>";
         break;
 }
+
